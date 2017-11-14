@@ -5,8 +5,6 @@
  */
 \Assets::add('admin_assets');
 
-//Route::get('ajax', 'AjaxController@index')->name('ajax');
-
 Route::get('dashboard', 'DashboardController@index')->name('dashboard');
 
 Route::get('profile', 'ProfileController@index')->name('profile');
@@ -24,7 +22,3 @@ Route::resource('users', 'UserController');
 Route::resource('role', 'RoleController');
 
 Route::resource('permissions', 'PermissionController')->except(['show']);
-
-
-
-Route::get('settings', 'SettingsController@index')->name('settings');

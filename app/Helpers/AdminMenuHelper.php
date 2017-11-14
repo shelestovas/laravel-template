@@ -1,16 +1,11 @@
 <?php
 namespace App\Helpers;
 
-
-use App\User;
 use Cartalyst\Sentinel\Users\UserInterface;
 
 class AdminMenuHelper
 {
 
-    /**
-     * @param User $user
-     */
     public static function generateMainAdminMenu(UserInterface $user = null)
     {
         if ($user == null)
@@ -53,11 +48,6 @@ class AdminMenuHelper
                 ->data('permission', 'admin.permissions.index');
             $menu->admin_permissions->add('Добавить разрешение', ['route' => 'admin.permissions.create'])
                 ->data('permission', 'admin.permissions.create');
-
-            $menu->add('Настройки', ['route' => 'admin.settings'])
-                ->prepend('<i class="icon-cogs"></i><span>')
-                ->append('</span>')
-                ->data('permission', 'admin.settings');
 
         })->filter(function ($item) use ($user) {
             if($item->hasChildren()) {

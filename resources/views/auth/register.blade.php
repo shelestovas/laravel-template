@@ -66,13 +66,15 @@
                                     <div class="checkbox">
                                         <label>
                                             {!! Form::checkbox('terms', 1, 0, ['class' => 'styled']) !!}
-                                            Я согласен с <a href="#">правилами</a>
+                                            Я согласен с <a href="#" data-toggle="modal" data-toggle="modal" data-target="#modal_policy">правилами</a>
                                         </label>
                                         @if ($errors->has('terms'))
                                             <span class="help-block">{{ $errors->first('terms') }}</span>
                                         @endif
                                     </div>
                                 </div>
+
+                                @include('auth.policy')
 
                                 <button type="submit" class="btn bg-teal btn-block btn-lg">{!! $options['register_btn_register'] !!}</button>
                                 @endif

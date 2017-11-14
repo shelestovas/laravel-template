@@ -69,7 +69,8 @@
                                 @endif
                                 @isset($options['auth_policy'])
                                     @if($options['auth_policy'] == 1)
-                                        <span class="help-block text-center no-margin">Пользуясь сервисом вы даете согласие на обработку <a href="#">персональных данных</a></span>
+                                        <span class="help-block text-center no-margin">Пользуясь сервисом вы даете согласие на обработку <a href="#" data-toggle="modal" data-toggle="modal" data-target="#modal_policy">персональных данных</a></span>
+                                        @include('auth.policy')
                                     @endif
                                 @endisset
 
